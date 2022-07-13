@@ -1,11 +1,28 @@
 package pragmatic.testing;
 
-final class Criterion {
+final class Criterion implements Scoreable {
+    private final Weight weight;
+    private final Answer answer;
+    private int score;
+
+    Criterion(Answer ans, Weight w) {
+        this.answer = ans;
+        this.weight = w;
+    }
+
     public Answer getAnswer() {
-        return null;
+        return answer;
     }
 
     public Weight getWeight() {
-        return null;
+        return weight;
+    }
+
+    public void setScore(int s) {
+        this.score = s;
+    }
+
+    public int getScore() {
+        return score;
     }
 }
