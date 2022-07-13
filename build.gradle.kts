@@ -17,6 +17,14 @@ dependencies {
     testImplementation("junit:junit:${Versions.JUNIT}")
 }
 
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+        xml.outputLocation
+            .set(File("$buildDir/reports/jacoco/test/jacoco.xml"))
+    }
+}
 sonarqube {
     properties {
         property("sonar.host.url", "https://sonarcloud.io")
