@@ -10,19 +10,19 @@ import java.util.List;
  */
 public final class Criteria implements Iterable<Criterion> {
 
-    private final List<Criterion> criteria = new ArrayList<>();
+    private final List<Criterion> criterions = new ArrayList<>();
 
     public void add(Criterion criterion) {
-        criteria.add(criterion);
+        criterions.add(criterion);
     }
 
     @Override
     public Iterator<Criterion> iterator() {
-        return criteria.iterator();
+        return criterions.iterator();
     }
 
     public int arithmeticMean() {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 
     public double geometricMean(int[] numbers) {

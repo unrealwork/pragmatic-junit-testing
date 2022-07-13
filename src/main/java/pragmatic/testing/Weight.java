@@ -10,7 +10,9 @@ enum Weight {
      */
     DONT_CARE;
 
+    private static final int ZERO = 0;
+
     public int getValue() {
-        return 0;
+        return ZERO;
     }
 }
