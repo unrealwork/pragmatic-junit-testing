@@ -20,9 +20,9 @@ public class ProfileTest {
 
     @Test
     public void matchAnswersFalseWhenMustMatchCriteriaNotMet() {
-        Answer profileAnswer = new Answer(question, Bool.FALSE);
+        Answer profileAnswer = new Answer(question, Bool.FALSE.getValue());
         profile.add(profileAnswer);
-        Answer criteriaAnswer = new Answer(question, Bool.TRUE);
+        Answer criteriaAnswer = new Answer(question, Bool.TRUE.getValue());
         Criterion criterion = new Criterion(criteriaAnswer, Weight.MUST_MATCH);
         criteria.add(criterion);
 
@@ -33,9 +33,9 @@ public class ProfileTest {
 
     @Test
     public void matchAnswersTrueForAnyDontCareCriteria() {
-        Answer profileAnswer = new Answer(question, Bool.FALSE);
+        Answer profileAnswer = new Answer(question, Bool.FALSE.getValue());
         profile.add(profileAnswer);
-        Answer criteriaAnswer = new Answer(question, Bool.TRUE);
+        Answer criteriaAnswer = new Answer(question, Bool.TRUE.getValue());
         Criterion criterion = new Criterion(criteriaAnswer, Weight.DONT_CARE);
         criteria.add(criterion);
 
