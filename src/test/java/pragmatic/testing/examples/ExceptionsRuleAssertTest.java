@@ -10,17 +10,17 @@ import static org.junit.Assert.assertThrows;
 
 public final class ExceptionsRuleAssertTest {
     static class InsufficientFundsException extends RuntimeException {
-        public InsufficientFundsException(String message) {
+        InsufficientFundsException(String message) {
             super(message);
         }
     }
 
     static class Account {
-        int balance;
-        String name;
+        private int balance;
+        private String name;
 
-        Account(String name) {
-            this.name = name;
+        Account(String accountName) {
+            this.name = accountName;
         }
 
         void withdraw(int dollars) {
@@ -39,6 +39,7 @@ public final class ExceptionsRuleAssertTest {
     }
 
     @Rule
+    @SuppressWarnings("deprecation")
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
